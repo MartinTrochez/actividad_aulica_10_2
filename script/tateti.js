@@ -28,7 +28,6 @@ const sonidoHoverMouse = document.getElementById('sonido-hover')
 const sonidoClickBoton = document.getElementById('sonido-click-boton')
 const sonidoVictoria = document.getElementById('sonido-victoria')
 
-
 let turnoCirculo
 
 for (let i = 0; i < items.length; i++) {
@@ -50,7 +49,7 @@ botonReiniciar.addEventListener('mouseover', () => {
 
 // Funciones
 function comenzar() {
-  turnoCirculo = true
+  turnoCirculo = false
   ganadorH2.textContent = ''
   for (let i = 0; i < items.length; i++) {
     const item = items[i];
@@ -71,7 +70,7 @@ function clickMouse(evento) {
     sonidoClick.play()
   }
 
-  if (turnoCirculo) {
+  if (!turnoCirculo) {
     item.innerText = jugador1
     turnoJugador = jugador1
   } else {
@@ -110,9 +109,8 @@ function esEmpate() {
   })
 }
 
-
 function mostrarTurnoJugadorH2(turnoCirculo) {
-  if (turnoCirculo) {
+  if (!turnoCirculo) {
     jugadorH2.textContent = mensajeJugador[0]
   } else {
     jugadorH2.textContent = mensajeJugador[1]

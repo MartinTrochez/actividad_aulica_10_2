@@ -11,10 +11,9 @@ const condiciones_vicotria = [
   [2, 5, 8],
   [0, 4, 8],
   [2, 4, 6]
-];
+]
 
 const items = document.querySelectorAll('[data-item]')
-const wapperTateti = document.getElementById('wrapper-tateti')
 const botonReiniciar = document.getElementById('boton-reiniciar')
 
 const jugadorH2 = document.getElementById('jugador-turno')
@@ -79,7 +78,7 @@ function clickMouse(evento) {
   }
 
   if (esVictoria(turnoJugador)) {
-    let i = turnoCirculo ? 0 : 1
+    let i = turnoCirculo ? 1 : 0
     ganadorH2.innerText = ganadorJugador[i]
     sonidoVictoria.play()
     desabhilitarEventoClick()

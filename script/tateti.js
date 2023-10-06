@@ -78,7 +78,7 @@ function clickMouse(evento) {
   }
 
   if (esVictoria(turnoJugador)) {
-    let i = turnoCirculo ? 1 : 0
+      let i = turnoCirculo ? 1 : 0
     ganadorH2.innerText = ganadorJugador[i]
     sonidoVictoria.play()
     desabhilitarEventoClick()
